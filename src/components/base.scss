@@ -1,0 +1,54 @@
+.small-pad{
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.sec-pad{
+  padding: 2em;
+}
+
+.erm-aspect-content{
+  @extend .sec-pad;
+  h3{
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 16px;
+    margin-bottom: 15px;
+  }
+}
+
+p{
+  color: rgba(0,0,0,.654);
+}
+
+.header-sec{
+  color: rgba(0,0,0,.654);
+  font-weight: 600;
+  height: 70px;
+  border-bottom: 1px solid #d3d3d3;
+  line-height: 70px;
+  @extend .small-pad;
+  i{
+    vertical-align: middle;
+    font-size: 1.3rem;
+    margin-right: 10px;
+  }
+}
+.sec-wrapper{
+  margin-bottom: 30px;
+}
+.sec-title{
+  line-height: 14px;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: rgba(0,0,0,.987);
+  > .sub{
+    font-weight: 400;
+    font-size: 85%;
+    color: rgba(0,0,0,.654);
+  }
+}
+
+.row-content{
+  height: calc(100% - 70px)!important;
+}
