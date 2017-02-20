@@ -8,7 +8,22 @@
 import Session from './Session'
 import fireData from '../../firedata'
 import { mapGetters } from 'vuex'
+import Notify from 'notifyjs'
+let newUserNot = new Notify('Nuovo utente!', {
+  body: 'Un nuovo utente si è connesso al bol',
+  icon: 'http://www.hermeshotels.it/wp-content/uploads/2014/10/logoHermes.png'
+})
 export default {
+  mounted () {
+    if (Notify.needsPermission && Notify.isSupported()) {
+      Notify.requestPermission()
+    }
+  },
+  created () {
+    this.$firebaseRefs.sessions.on('child_added', function (data) {
+      newUserNot.show()
+    })
+  },
   data () {
     return {
       currentIndex: null
@@ -22,7 +37,6 @@ export default {
   methods: {
     setSession (index) {
       this.currentIndex = index
-      console.log(index)
     }
   },
   firebase () {

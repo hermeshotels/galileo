@@ -31,7 +31,7 @@ export default {
   },
   computed: {
     startTime () {
-      return moment(this.session.startTime).format('HH:MM')
+      return moment(this.session.started).format('HH:mm')
     }
   },
   methods: {

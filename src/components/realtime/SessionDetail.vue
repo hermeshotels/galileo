@@ -23,7 +23,7 @@
                 Arrivo
               </div>
               <div class="erm-value">
-                {{session.filters.arrival}}
+                {{date(session.filters.arrival)}}
               </div>
             </div>
             <div class="erm-item auto">
@@ -31,7 +31,7 @@
                 Partenza
               </div>
               <div class="erm-value">
-                {{session.filters.departure}}
+                {{date(session.filters.departure)}}
               </div>
             </div>
             <div class="erm-item auto">
@@ -64,6 +64,7 @@
 
 <script>
 import Chat from './Chat'
+import moment from 'moment'
 import RoomList from './RoomList'
 import {mapGetters, mapMutations} from 'vuex'
 import fireData from '../../firedata'
@@ -82,7 +83,10 @@ export default {
   methods: {
     ...mapMutations([
       'setCurrentSession'
-    ])
+    ]),
+    date (value) {
+      return moment(value).format('MM/DD/YYYY')
+    }
   },
   firebase () {
     return {
