@@ -82,7 +82,7 @@ export default {
       // sconto percentuale sul vecchio valore
       newPrice = oldPrice / (parseFloat(newPrice) / 100 + 1)
     }
-    rate.child('prices').once('value').then((snap) => {
+    rate.child('dailyPrices').once('value').then((snap) => {
       let count = 0
       snap.forEach((child) => {
         count++
@@ -91,10 +91,10 @@ export default {
       snap.forEach((child) => {
         updates[child.key + '/price'] = parseFloat(newPrice / count)
       })
-      rate.child('prices').update(updates, (complete) => {
+      rate.child('dailyPrices').update(updates, (complete) => {
         rate.update({
           overrided: true,
-          price: parseFloat(newPrice)
+          total: parseFloat(newPrice)
         }, (complete) => {
           return cb(null, true)
         })
