@@ -11,7 +11,7 @@
           </small>
         </div>
         <div class="erm-room-price auto">
-          {{room.rates[0].price | currency}}
+          {{room.rates[0].total | currency}}
         </div>
         <div class="erm-room-actions auto">
           <button class="primary clear" @click="editRate(room.rates[0], 0)">
@@ -25,7 +25,7 @@
             {{rate.name}} <br>
           </div>
           <div class="erm-room-price auto">
-            {{rate.price | currency}}
+            {{rate.total | currency}}
           </div>
           <div class="erm-room-actions auto">
             <button class="primary clear" @click="editRate(rate, rateIdx)">
@@ -118,7 +118,7 @@ export default {
     },
     setNewRate () {
       Loading.show()
-      fireData.setNewRatePrice(this.currentSession, this.index, this.currentRateIdx, this.newPrice, this.currentRate.price, this.typeSelected, (completed) => {
+      fireData.setNewRatePrice(this.currentSession, this.index, this.currentRateIdx, this.newPrice, this.currentRate.total, this.typeSelected, (completed) => {
         Loading.hide()
         this.$refs.rateModal.close()
       })

@@ -8,7 +8,7 @@
       </div>
     </div>
 
-    <div class="erm-aspect-content">
+    <div class="erm-content">
       <div class="sec-wrapper">
         <h3>
           CSS Personalizzato <br>

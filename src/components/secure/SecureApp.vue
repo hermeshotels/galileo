@@ -22,11 +22,11 @@
         </div>
       </div>
       <div class="list no-border platform-delimiter">
-          <!-- <div class="list-label">Gestisci</div>
-          <q-drawer-link icon="build" to="/showcase/layout/toolbar">
-            Setup
+          <div class="list-label">Gestione</div>
+          <q-drawer-link icon="attach_money" to="/secure/manage">
+            Sales
           </q-drawer-link>
-          <q-drawer-link icon="hotel" to="/showcase/layout/tabs">
+          <!-- <q-drawer-link icon="hotel" to="/showcase/layout/tabs">
             Booking Engine
           </q-drawer-link>
           <q-drawer-link icon="date_range" to="/showcase/layout/drawer">
@@ -42,6 +42,7 @@
           <q-drawer-link icon="multiline_chart" to="/showcase/layout/drawer">
             Report
           </q-drawer-link> -->
+          <div class="list-label">Booking Engine</div>
           <q-drawer-link icon="comment" to="/secure/realtime">
             Realtime
           </q-drawer-link>

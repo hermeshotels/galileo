@@ -41,6 +41,18 @@ export default new VueRouter({
           component: load('realtime/Realtime')
         },
         {
+          name: 'manage',
+          path: 'manage',
+          component: load('sales/Sales'),
+          children: [
+            {
+              name: 'ods',
+              path: 'ods',
+              component: load('sales/Ods')
+            }
+          ]
+        },
+        {
           name: 'bookingengine',
           path: 'booking-engine',
           component: load('bookingengine/BookingEngine'),
